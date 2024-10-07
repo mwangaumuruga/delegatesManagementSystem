@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delegate Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Delegate Management System</h1>
+    </header>
+    <main>
+        <section class="form-section">
+            <h2>Add / Edit Delegate</h2>
+            <form id="delegateForm">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+                
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="organization">Organization:</label>
+                <input type="text" id="organization" name="organization" required>
+                
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+                
+                <label for="position">Position:</label>
+                <select id="position" name="position" required>
+                    <option value="">Select Position</option>
+                    <option value="Secretary">Secretary</option>
+                    <option value="Treasurer">Treasurer</option>
+                    <option value="Director">Director</option>
+                    <option value="Governor">Governor</option>
+                </select>
+
+                <label for="party">Political Party:</label>
+                <select id="party" name="party" required>
+                    <option value="">Select Political Party</option>
+                    <option value="Democratic">Democratic</option>
+                    <option value="Republican">Republican</option>
+                </select>
+                
+                <button type="submit" id="submitBtn">Add Delegate</button>
+                <button type="button" id="clearBtn">Clear</button>
+            </form>
+        </section>
+        
+        <section class="list-section">
+            <h2>Delegates List</h2>
+            <table id="delegateTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Organization</th>
+                        <th>Gender</th>
+                        <th>Position</th>
+                        <th>Political Party</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="delegateList">
+                    <!-- Delegate rows will go here -->
+                </tbody>
+            </table>
+        </section>
+
+        <section class="chat-section">
+            <h2>Chatbox</h2>
+            <div id="chatMessages"></div>
+            <input type="text" id="chatInput" placeholder="Type a command...">
+            <button id="sendMessage">Send</button>
+        </section>
+
+        <canvas id="genderChart"></canvas>
+<canvas id="partyChart"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    </main>
+
+    <section class="charts-section">
+        <div id="genderChart" class="chart"></div>
+        <div id="partyChart" class="chart"></div>
+    </section>
+
+    <div id="genderChart" style="width: 600px; height: 400px;"></div>
+<div id="partyChart" style="width: 600px; height: 400px;"></div>
+
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load('current', { packages: ['corechart'] });
+  google.charts.setOnLoadCallback(initializeCharts);
+</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<canvas id="genderChart" width="400" height="200"></canvas>
+<canvas id="partyChart" width="400" height="200"></canvas>
+
+
+
+</body>
+</html>
